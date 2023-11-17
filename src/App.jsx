@@ -1,22 +1,25 @@
 import imgPath from "./assets/react-core-concepts.png";
 const words = ["Fundamental", "Core", "Crucial"];
 import componentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from "./data";
+
 function getDesc(max) {
     return Math.floor(Math.random() * (max + 1));
 }
-
-function CoreComp(props) {
+let chumma = { ...CORE_CONCEPTS };
+function CoreComp({ img, title, desc }) {
     return (
         <li>
-            <img src={props.img} alt="" />
-            <h2>{props.title}</h2>
-            <p>{props.desc}</p>
+            <img src={img} alt="" />
+            <h2>{title}</h2>
+            <p>{desc}</p>
         </li>
     );
 }
 
 function Header() {
     const description = words[getDesc(2)];
+
     return (
         <header>
             <img src={imgPath} alt="Stylized atom" />
@@ -30,6 +33,7 @@ function Header() {
 }
 
 function App() {
+    console.log({ ...CORE_CONCEPTS[0] });
     return (
         <div>
             <Header />
@@ -37,16 +41,11 @@ function App() {
                 <section id="core-concepts">
                     <h2>Time to get started!</h2>
                     <ul>
-                        <CoreComp
-                            title="Components"
-                            img={componentsImg}
-                            desc="This is the basic concept for learning react"
-                        ></CoreComp>
-                        <CoreComp
-                            title="Props"
-                            img={componentsImg}
-                            desc="This is the basic concept for learning react"
-                        ></CoreComp>
+                        <CoreComp {...CORE_CONCEPTS[0]}></CoreComp>
+                        <CoreComp {...CORE_CONCEPTS[1]}></CoreComp>
+
+                        <CoreComp {...CORE_CONCEPTS[2]}></CoreComp>
+                        <CoreComp {...CORE_CONCEPTS[3]}></CoreComp>
                     </ul>
                 </section>
             </main>
