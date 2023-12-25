@@ -1,37 +1,6 @@
-import imgPath from "./assets/react-core-concepts.png";
-const words = ["Fundamental", "Core", "Crucial"];
-import componentsImg from "./assets/components.png";
-import { CORE_CONCEPTS } from "./data";
-
-function getDesc(max) {
-    return Math.floor(Math.random() * (max + 1));
-}
-let chumma = { ...CORE_CONCEPTS };
-function CoreComp({ img, title, desc }) {
-    return (
-        <li>
-            <img src={img} alt="" />
-            <h2>{title}</h2>
-            <p>{desc}</p>
-        </li>
-    );
-}
-
-function Header() {
-    const description = words[getDesc(2)];
-
-    return (
-        <header>
-            <img src={imgPath} alt="Stylized atom" />
-            <h1>React Essentials</h1>
-            <p>
-                {description} React concepts you will need for almost any app
-                you are going to build!
-            </p>
-        </header>
-    );
-}
-
+import Header from "./components/Header.jsx";
+import CoreComp from "./components/CoreComp.jsx";
+import { CORE_CONCEPTS } from "./data.js";
 function App() {
     console.log({ ...CORE_CONCEPTS[0] });
     return (
