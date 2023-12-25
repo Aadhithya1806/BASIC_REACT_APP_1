@@ -1,4 +1,5 @@
 export default function CoreComp({ img, title, desc }) {
+    // console.log(props);
     return (
         <li>
             <img src={img} alt="" />

@@ -1,4 +1,5 @@
 import imgPath from "../assets/react-core-concepts.png";
+import "./Header.css";
 const words = ["Fundamental", "Core", "Crucial"];
 function getDesc(max) {
     return Math.floor(Math.random() * (max + 1));
