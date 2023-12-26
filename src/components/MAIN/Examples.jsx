@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { EXAMPLE_BTNS, EXAMPLES } from "../data";
-import TabButton from "./TabButton.jsx";
+import { EXAMPLE_BTNS, EXAMPLES } from "../../data.js";
+import TabButton from "../UI/TabButton.jsx";
 let tabContent = <p>Click a topic to study.</p>;
 
 const Examples = () => {

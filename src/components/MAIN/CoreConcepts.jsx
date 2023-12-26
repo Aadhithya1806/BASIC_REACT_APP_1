@@ -1,5 +1,5 @@
 import CoreComp from "./CoreComp.jsx";
-import { CORE_CONCEPTS } from "../data.js";
+import { CORE_CONCEPTS } from "../../data.js";
 
 import React from "react";
 
