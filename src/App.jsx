@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header.jsx";
 import CoreComp from "./components/CoreComp.jsx";
 import TabButton from "./components/TabButton.jsx";
-import { CORE_CONCEPTS, EXAMPLES } from "./data.js";
+import { CORE_CONCEPTS, EXAMPLES, EXAMPLE_BTNS } from "./data.js";
 let tabContent = "Please click a button!";
 function App() {
     const [selectedValue, setSelectedValue] = useState(null);
@@ -41,38 +41,17 @@ function App() {
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <TabButton
-                            isSelected={selectedValue === "components"}
-                            onSelect={() => {
-                                selectHandler("components");
-                            }}
-                        >
-                            Components
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedValue === "state"}
-                            onSelect={() => {
-                                selectHandler("state");
-                            }}
-                        >
-                            States
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedValue === "props"}
-                            onSelect={() => {
-                                selectHandler("props");
-                            }}
-                        >
-                            Props
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedValue === "jsx"}
-                            onSelect={() => {
-                                selectHandler("jsx");
-                            }}
-                        >
-                            JSX
-                        </TabButton>
+                        {EXAMPLE_BTNS.map((item) => (
+                            <TabButton
+                                key={item}
+                                isSelected={selectedValue === item}
+                                onSelect={() => {
+                                    selectHandler(item);
+                                }}
+                            >
+                                {item.toUpperCase()}
+                            </TabButton>
+                        ))}
                     </menu>
                     {tabContent}
                 </section>

@@ -3,6 +3,7 @@ import propsImg from "./assets/config.png";
 import jsxImg from "./assets/jsx-ui.png";
 import stateImg from "./assets/state-mgmt.png";
 
+export const EXAMPLE_BTNS = ["components", "state", "props", "jsx"];
 export const CORE_CONCEPTS = [
     {
         image: componentsImg,
