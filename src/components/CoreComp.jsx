@@ -1,10 +1,10 @@
-export default function CoreComp({ img, title, desc }) {
+export default function CoreComp({ image, title, description }) {
     // console.log(props);
     return (
         <li>
-            <img src={img} alt="" />
+            <img src={image} alt="" />
             <h2>{title}</h2>
-            <p>{desc}</p>
+            <p>{description}</p>
         </li>
     );
 }
